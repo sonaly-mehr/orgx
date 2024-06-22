@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     font-family: "Inter", sans-serif;
     font-weight: 400;
 }
-.tHead{
-    @apply py-1.5 text-left font-normal text-xs text-[#6C6C6C] border-r border-solid border-[#DBDBDB]
+
+.tHead {
+    @apply py-1.5 text-left font-normal text-[10px] lg:text-xs text-[#6C6C6C] border-r border-solid border-[#DBDBDB]
 }
-.tData{
-    @apply whitespace-nowrap text-black text-sm border-r border-solid border-[#DBDBDB]
+
+.tData {
+    @apply whitespace-nowrap text-black text-[10px] lg:text-sm border-r border-solid border-[#DBDBDB]
 }
