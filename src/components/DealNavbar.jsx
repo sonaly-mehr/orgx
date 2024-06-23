@@ -29,11 +29,11 @@ const DealNavbar = ({ setSidebarOpen }) => {
             <h5 className="text-xs lg:text-sm text-[#0E0E0E]">
               Shared with timeless
             </h5>
-            <img src="/assets/icon.svg" alt="" />
+            <img src="/assets/Icon.svg" alt="" />
           </div>
 
           {/* Users */}
-          <div className="flex -ml-[10px]">
+          <div className="flex  -ml-[17px] lg:-ml-[10px]">
             <img
               src="/assets/user1.png"
               alt=""
