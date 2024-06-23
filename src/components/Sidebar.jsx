@@ -11,24 +11,15 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import {
-  Bars3Icon,
-  BellIcon,
   BuildingOffice2Icon,
-  CalendarIcon,
-  ChartPieIcon,
   Cog6ToothIcon,
-  DocumentDuplicateIcon,
   EllipsisHorizontalIcon,
   FolderIcon,
-  HomeIcon,
   InboxIcon,
   PlusIcon,
   QuestionMarkCircleIcon,
   SparklesIcon,
-  Square2StackIcon,
-  Squares2X2Icon,
   UserCircleIcon,
-  UsersIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import {
@@ -143,13 +134,17 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                       <li>
                         <ul className="-mx-2 space-y-1">
                           {navigation.map((item) => (
-                            <li key={item.name}>
+                            <li
+                              key={item.name}
+                              className={`flex justify-between items-center ${
+                                item.current && "bg-[#F5F5F5]"
+                              } hover:bg-[#F5F5F5] w-full py-1 rounded-xl`}
+                            >
                               <a
                                 href={item.href}
                                 className={classNames(
-                                  item.current &&
-                                    "bg-[#F5F5F5] !text-[#2B2B2B] py-1",
-                                  "group flex gap-x-3 rounded-xl px-3 text-sm leading-6 text-white"
+                                  item.current && "!text-[#2B2B2B]",
+                                  "group flex gap-x-3 rounded-xl px-3 text-sm leading-6 text-white hover:text-[#2B2B2B]"
                                 )}
                               >
                                 <item.icon
@@ -161,6 +156,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                 />
                                 {item.name}
                               </a>
+                              <span
+                                className={`${
+                                  item.current ? "text-[#636363]" : "text-white"
+                                } text-xs font-regular inline-block relative pr-5 `}
+                              >
+                                {item?.count}
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -168,13 +170,19 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                       <li>
                         <ul className="-mx-2 space-y-1">
                           {navigation2.map((item) => (
-                            <li key={item.name}>
+                            <li
+                              key={item.name}
+                              className={`flex justify-between items-center ${
+                                item.current && "bg-[#F5F5F5]"
+                              }  hover:bg-[#F5F5F5] hover:text-[#2B2B2B] w-full py-1 rounded-xl`}
+                            >
                               <a
                                 href={item.href}
                                 className={classNames(
                                   item.current &&
-                                    "bg-[#F5F5F5] !text-[#2B2B2B] py-1 font-medium",
-                                  "group flex gap-x-3 rounded-xl px-3 text-sm leading-6 text-white font-normal"
+                                    item.current &&
+                                    "!text-[#2B2B2B]",
+                                  "group flex gap-x-3 rounded-xl px-3 text-sm leading-6 text-white hover:text-[#2B2B2B]"
                                 )}
                               >
                                 <item.icon
@@ -186,23 +194,34 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                 />
                                 {item.name}
                               </a>
+                              <span
+                                className={`${
+                                  item.current ? "text-[#636363]" : "text-white"
+                                } text-xs font-regular inline-block relative pr-5 `}
+                              >
+                                {item?.count}
+                              </span>
                             </li>
                           ))}
                         </ul>
                       </li>
                       <li>
                         <ul className="-mx-2 space-y-1">
-                          <span className="text-sm inline-block pl-2.5 mb-1 text-white">
+                          <span className="text-sm block pl-2.5 mb-1 text-white">
                             Collections
                           </span>
                           {collections.map((item) => (
-                            <li key={item.name}>
+                            <li
+                              key={item.name}
+                              className={` ${
+                                item.current && "bg-[#F5F5F5]"
+                              } hover:bg-[#F5F5F5] w-full py-1 rounded-xl`}
+                            >
                               <a
                                 href={item.href}
                                 className={classNames(
-                                  item.current &&
-                                    "bg-[#F5F5F5] !text-[#2B2B2B] py-1 font-medium",
-                                  "group flex gap-x-3 rounded-xl px-3 text-sm leading-6 text-white font-normal"
+                                  item.current && "!text-[#2B2B2B]",
+                                  "group flex items-center gap-x-3 rounded-xl px-3 text-sm leading-6 text-white hover:text-[#2B2B2B]"
                                 )}
                               >
                                 <img
@@ -217,7 +236,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                           ))}
                         </ul>
                       </li>
-                      <li className="mt-auto">
+                      <li className="mt-40 lg:mt-auto">
                         <button className="text-white flex gap-1 items-center mb-4">
                           <PlusIcon width={20} height={20} /> Invite teammates
                         </button>
@@ -229,7 +248,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                           <SparklesIcon
                             className={`${
                               selectIcon
-                                ? "h-7 w-7 bg-[#F3F3F3] p-1 rounded-lg"
+                                ? "h-7 w-7 bg-[#F3F3F3] p-1 rounded-lg !text-black"
                                 : "h-5 w-5 "
                             } shrink-0 text-white`}
                             aria-hidden="true"
@@ -305,13 +324,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   {navigation.map((item) => (
                     <li
                       key={item.name}
-                      className="flex justify-between items-center hover:bg-[#F5F5F5] rounded-xl"
+                      className={`flex justify-between items-center ${
+                        item.current && "bg-[#F5F5F5]"
+                      } hover:bg-[#F5F5F5] px-2.5 py-1 rounded-xl w-full`}
                     >
                       <a
                         href={item.href}
                         className={classNames(
-                          item.current && "bg-[#F5F5F5] font-medium text-black",
-                          "group flex items-center gap-x-3 rounded-xl px-2.5 py-1 text-sm leading-6 text-[#161616] w-full"
+                          item.current && " font-medium text-black",
+                          "group flex items-center gap-x-3 text-sm leading-6 text-[#161616]"
                         )}
                       >
                         <item.icon
@@ -323,7 +344,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                         />
                         {item.name}
                       </a>
-                      <span className="text-[#636363] text-xs font-regular inline-block relative right-4">
+                      <span className="text-[#636363] text-xs font-regular inline-block relative ">
                         {item?.count}
                       </span>
                     </li>
@@ -336,13 +357,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   {navigation2.map((item) => (
                     <li
                       key={item.name}
-                      className="flex justify-between items-center hover:bg-[#F5F5F5] rounded-xl"
+                      className={`flex justify-between items-center ${
+                        item.current && "bg-[#F5F5F5]"
+                      } hover:bg-[#F5F5F5] px-2.5 py-1 rounded-xl w-full`}
                     >
                       <a
                         href={item.href}
                         className={classNames(
-                          item.current && "bg-[#F5F5F5] font-medium text-balck",
-                          "group flex items-center gap-x-3 rounded-xl px-2.5 py-1 text-sm leading-6 text-[#161616] w-full"
+                          item.current && " font-medium text-black",
+                          "group flex items-center gap-x-3 text-sm leading-6 text-[#161616]"
                         )}
                       >
                         <item.icon
@@ -354,7 +377,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                         />
                         {item.name}
                       </a>
-                      <span className="text-[#636363] text-xs font-regular inline-block relative right-4">
+                      <span className="text-[#636363] text-xs font-regular inline-block relative">
                         {item?.count}
                       </span>
                     </li>
@@ -371,13 +394,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   {collections.map((item) => (
                     <li
                       key={item.name}
-                      className="flex justify-between items-center hover:bg-[#F5F5F5] rounded-xl"
+                      className={`flex justify-between items-center ${
+                        item.current && "bg-[#F5F5F5]"
+                      } hover:bg-[#F5F5F5] px-2.5 py-1 rounded-xl w-full`}
                     >
                       <a
                         href={item.href}
                         className={classNames(
-                          item.current && "bg-[#F5F5F5] font-medium text-balck",
-                          "group flex items-center gap-x-3 rounded-xl px-2.5 py-1 text-sm leading-6 text-[#161616] w-full"
+                          item.current && " font-medium text-black",
+                          "group flex items-center gap-x-3 text-sm leading-6 text-[#161616]"
                         )}
                       >
                         <img

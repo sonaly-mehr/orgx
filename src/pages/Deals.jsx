@@ -1,15 +1,8 @@
-import {
-  Menu,
-  MenuButton,
-  MenuItems,
-  MenuItem,
-  Transition,
-} from "@headlessui/react";
+import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
 import {
   ArrowsUpDownIcon,
   ChevronDownIcon,
   EllipsisHorizontalIcon,
-  FunnelIcon,
   GlobeAltIcon,
   PlusIcon,
   Square3Stack3DIcon,
@@ -474,7 +467,7 @@ export default function Deals() {
 
           {/* Row selection count */}
           {selectedDeal.length > 0 && (
-            <div className="text-xs lg:text-sm fixed left-3 lg:left-[55%] bottom-40 lg:bottom-4 lg:-translate-x-1/2 flex items-center justify-between bg-white border border-solid border-[#DDDDDD] rounded-2xl p-3 w-[350px] lg:w-[580px] shadow-md">
+            <div className="text-[11px] lg:text-sm fixed left-3 lg:left-[55%] bottom-[30rem] lg:bottom-4 lg:-translate-x-1/2 flex items-center justify-between bg-white border border-solid border-[#DDDDDD] rounded-2xl p-3 w-[350px] lg:w-[580px] shadow-md">
               <span className="flex it gap-2 text-[#101010]">
                 {" "}
                 <img src="/assets/select.svg" alt="" /> 1 Deal selected
@@ -482,7 +475,7 @@ export default function Deals() {
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="bg-transparenttext-[#111111] flex gap-2 pr-3 items-center border-r border-solid border-[#E6E6E6]"
+                  className="bg-transparenttext-[#111111] flex gap-1 lg:gap-2 pr-3 items-center border-r border-solid border-[#E6E6E6]"
                 >
                   <PlusIcon className="w-4 h-4 text-[#101010]" /> Add to
                   collection
