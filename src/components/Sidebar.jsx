@@ -236,7 +236,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                           ))}
                         </ul>
                       </li>
-                      <li className="mt-40 lg:mt-auto">
+                      <li className="mt-16 lg:mt-auto">
                         <button className="text-white flex gap-1 items-center mb-4">
                           <PlusIcon width={20} height={20} /> Invite teammates
                         </button>
